@@ -54,6 +54,7 @@ import { Button } from "@/components/ui/button"
 - **Prettier**: config in `.prettierrc` (no semicolons, double quotes, LF line endings, Tailwind class sorting).
 - **Commit messages**: [Conventional Commits](https://www.conventionalcommits.org/), enforced by commitlint through the Husky `commit-msg` hook (`.husky/commit-msg`, `commitlint.config.js`). Example: `feat: add login page`.
 - **CI**: `.github/workflows/ci.yml` runs `format:check` and `typecheck` on pushes to `main`/`master` and on pull requests. Run both locally before pushing.
+- **Security**: `.github/workflows/security.yml` runs CodeQL, `npm audit` (prod deps, high+), dependency review (PRs) and Gitleaks on push, PRs and weekly. Dependabot (`.github/dependabot.yml`) opens weekly update PRs for npm and GitHub Actions.
 - **Line endings**: `.gitattributes` forces LF so Prettier results match between Windows and CI.
 
 ## Editor setup (VS Code)
